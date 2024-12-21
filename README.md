@@ -10,17 +10,17 @@ NOTE: If you have a model.pth file already, it will be loaded from at the start 
 ## Real Example Conversation 
 NOTE: This is an output from a model trained on a cleaned simple wikipedia custom dataset, and a Q&A/Basic Conversation Dataset custom dataset for 30,000 max_iters each. Both datasets were over 10,000 lines and a total of about 60MB.
 
-Prompt: What country was the second largest source of foreign-born New Yorkers in 2011?\n
-Output: 54%\n
-Prompt: What country?\n
-Output: France\n
-Prompt: What city?\n
-Output: New York City\n
-Prompt: Wow, you are pretty smart, but thoose are wrong.\n
-Output: what do you mean?\n
-Prompt: The correct answer is China.\n
-Output: What did Kanye's father call the politics after he captured it?\n
-Prompt: 7*7\n
+Prompt: What country was the second largest source of foreign-born New Yorkers in 2011?<br>
+Output: 54%<br>
+Prompt: What country?<br>
+Output: France<br>
+Prompt: What city?<br>
+Output: New York City<br>
+Prompt: Wow, you are pretty smart, but thoose are wrong.<br>
+Output: what do you mean?<br>
+Prompt: The correct answer is China.<br>
+Output: What did Kanye's father call the politics after he captured it?<br>
+Prompt: 7*7<br>
 Output: four, what's up?
 
 ## Resources
