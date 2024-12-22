@@ -36,8 +36,9 @@ unk_id = stoi[UNK_TOKEN]
 eos_id = stoi[EOS_TOKEN]
 
 # Encoder: splits on EOS_TOKEN, encodes each part, and adds EOS tokens appropriately
-encode = lambda s: sum([[stoi.get(c, unk_id) for c in part] + [eos_id] 
-                       for part in s.split(EOS_TOKEN)], [])
+def encode(s):
+    parts = [ [stoi.get(c, unk_id) for c in part] + [eos_id] for part in s.split(EOS_TOKEN) ]
+    return list(itertools.chain.from_iterable(parts))
 
 # Decoder: preserves EOS tokens in the middle, only adds final EOS if present
 decode = lambda l: ''.join([itos.get(i, UNK_TOKEN) if i != eos_id 
