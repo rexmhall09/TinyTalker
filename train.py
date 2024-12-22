@@ -4,7 +4,7 @@ from torch.nn import functional as F
 import tqdm
 from model import GPTLanguageModel, device, n_embd, n_head, n_layer, dropout, block_size
 import os
-
+import itertools
 
 # hyperparameters
 batch_size = 64 # how many independent sequences will processing in parallel
