@@ -7,7 +7,7 @@ n_embd = 512
 n_head = 8
 n_layer = 12
 dropout = 0.3
-block_size = 256
+block_size = 512
 device = 'cuda' if torch.cuda.is_available() else 'mps' if torch.backends.mps.is_available() else 'cpu'
 
 class Head(nn.Module):
