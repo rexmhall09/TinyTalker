@@ -1,4 +1,3 @@
-# prompt.py
 import torch
 import torch.nn.functional as F
 from model import GPTLanguageModel, device, n_embd, n_head, n_layer, dropout, block_size
@@ -21,10 +20,11 @@ model = GPTLanguageModel(
 model.load_state_dict(torch.load("model.pth", map_location=device))
 model.eval()
 
+prompt=""
 while True:
     try:
         # Prompt the user for input
-        prompt = input("Prompt: ") + tokenizer.eos_token
+        prompt += str(input("Prompt: ")) + tokenizer.eos_token
         # Encode the prompt
         context_tokens = tokenizer.encode(prompt)
         idx = torch.tensor([context_tokens], dtype=torch.long, device=device)
@@ -47,9 +47,11 @@ while True:
             # Decode the last token
             next_token_id = idx_next[0].item()
             if next_token_id == tokenizer.eos_id:
+                prompt += tokenizer.eos_token
                 break
             next_char = tokenizer.itos.get(next_token_id, tokenizer.unk_token)
             # Print the generated character
+            prompt+=next_char
             print(next_char, end='', flush=True)
 
         print()  # For cleaner formatting
