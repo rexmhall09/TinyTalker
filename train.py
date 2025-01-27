@@ -27,11 +27,21 @@ def decode(l):
 # Prepare tokenized data in memory-mapped format
 tokenized_file = 'tokenized_data.bin'
 
+# Replace the tokenization section with this chunk-based approach
 if not os.path.exists(tokenized_file):
-    print("Tokenizing input.txt and saving to tokenized_data.bin...")
+    print("Tokenizing input.txt in chunks and saving to tokenized_data.bin...")
+    buffer_size = 1024 * 1024  # Process 1MB at a time (adjust as needed)
+    encoded_data = []
+    
     with open('input.txt', 'r', encoding='utf-8') as f:
-        text = f.read()
-    encoded_data = encode(text)
+        while True:
+            chunk = f.read(buffer_size)
+            if not chunk:
+                break
+            # Encode the chunk and extend the encoded data
+            encoded_chunk = encode(chunk)
+            encoded_data.extend(encoded_chunk)
+    
     # Save as numpy array
     encoded_np = np.array(encoded_data, dtype=np.int32)
     with open(tokenized_file, 'wb') as f:
