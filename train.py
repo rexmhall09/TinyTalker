@@ -6,6 +6,7 @@ from model import GPTLanguageModel, device, n_embd, n_head, n_layer, dropout, bl
 from tokenizer import Tokenizer
 import os
 import numpy as np
+import codecs
 
 # Hyperparameters
 batch_size = 16
@@ -27,27 +28,29 @@ def decode(l):
 # Prepare tokenized data in memory-mapped format
 tokenized_file = 'tokenized_data.bin'
 
-# Replace the tokenization section with this chunk-based approach
 if not os.path.exists(tokenized_file):
     print("Tokenizing input.txt in chunks and saving to tokenized_data.bin...")
-    buffer_size = 1024 * 1024  # Process 1MB at a time (adjust as needed)
-    encoded_data = []
+    buffer_size = 1024 * 1024  # Process 1MB of bytes at a time
+    decoder = codecs.getincrementaldecoder('utf-8')()
     
-    with open('input.txt', 'r', encoding='utf-8') as f:
+    with open('input.txt', 'rb') as f, open(tokenized_file, 'wb') as out_f:
         while True:
             chunk = f.read(buffer_size)
-            if not chunk:
+            is_final = not chunk  # End of file when chunk is empty
+            
+            # Decode the chunk, handling multi-byte characters across chunks
+            decoded_chunk = decoder.decode(chunk, final=is_final)
+            
+            if decoded_chunk:
+                # Encode the text chunk into tokens
+                encoded_chunk = encode(decoded_chunk)
+                # Write tokens directly to file
+                np.array(encoded_chunk, dtype=np.int32).tofile(out_f)
+            
+            if is_final:
                 break
-            # Encode the chunk and extend the encoded data
-            encoded_chunk = encode(chunk)
-            encoded_data.extend(encoded_chunk)
-    
-    # Save as numpy array
-    encoded_np = np.array(encoded_data, dtype=np.int32)
-    with open(tokenized_file, 'wb') as f:
-        encoded_np.tofile(f)
 
-# Load memory-mapped data
+# Load the memory-mapped tokenized data
 data_np = np.memmap(tokenized_file, dtype=np.int32, mode='r')
 data = torch.from_numpy(data_np).long()
 
