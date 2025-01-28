@@ -121,7 +121,7 @@ import numpy as np
 
 # Hyperparameters
 batch_size = 16
-max_iters = 100000
+max_iters = 1000000
 learning_rate = 3e-4
 eval_iters = 500
 
