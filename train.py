@@ -198,7 +198,7 @@ def estimate_loss():
         # We'll just take `eval_iters` mini-batches from the loader
         # to estimate the average loss.
         for i, (x, y) in enumerate(loader):
-            if i >= eval_iters:
+            if i >= 100:
                 break
             x, y = x.to(device), y.to(device)
             logits, loss = model(x, y)
