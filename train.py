@@ -121,9 +121,9 @@ import numpy as np
 
 # Hyperparameters
 batch_size = 16
-max_iters = 30000
+max_iters = 100000
 learning_rate = 3e-4
-eval_iters = 300
+eval_iters = 500
 
 print(f"Using device: {device}")
 
