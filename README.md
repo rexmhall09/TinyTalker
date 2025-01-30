@@ -1,5 +1,5 @@
 # TinyTalker
-A small GPT model based on a character level tokenization system. It can train on any dataset and learns patterns really well.
+A small GPT model based on a character level tokenization system. It can train on any dataset and learns patterns really well. Adjust as needed.
 
 ## How To Use:
 To Train:
