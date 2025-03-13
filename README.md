@@ -14,28 +14,28 @@ Just run prompt.py.
 NOTE: This is an output from model.pth which was trained on a cleaned simple wikipedia custom dataset, and a Q&A/Basic Conversation Dataset custom dataset for 30,000 max_iters each, then fine-tuned on a few geography trivia questions. The training was done on google collab with the fine-tuning being done on my MacBook.
 
 Prompt: Hello!<br>
-Output: Hey!
-Prompt: What's your name?
-Output: TinyTalker.
-Prompt: What can you do?
-Output: I can generate text!
-Prompt: Nice!
-Output: Cool!
-Prompt: What is the capital of Japan?
-Output: Tokyo is the capital of Japan.
-Prompt: What are some other cities there?
-Output: Sure! Here is a list of Japan: Tokyo(Japan's Capital), Osaka, Kyoto, Sapporo, Sendai, Kobe, Fukuoka, Nagoya, and Nara are some Japanese cities.
-Prompt: Can you give me even more Japanese Cities?
-Output: Shi Hiroshima and Nagasaki famous for being the only 2 cities to be Nuked during World War 2.
-Prompt: Wow... thats grim.       
-Output: What cities were nuked during World War 2/WWWWWW2?
-Prompt: You just told me.
-Output: TinyTalker.
-Prompt: Ah okay, this is roughly the limit of what you can do.
-Output: Nagasaki as the gateway to the Amazon.
-Prompt: yep.
-Output: Manaus is situated in which country?
-Prompt: Brazil, anyways Bye! Have a nice day!
+Output: Hey!<br>
+Prompt: What's your name?<br>
+Output: TinyTalker.<br>
+Prompt: What can you do?<br>
+Output: I can generate text!<br>
+Prompt: Nice!<br>
+Output: Cool!<br>
+Prompt: What is the capital of Japan?<br>
+Output: Tokyo is the capital of Japan.<br>
+Prompt: What are some other cities there?<br>
+Output: Sure! Here is a list of Japan: Tokyo(Japan's Capital), Osaka, Kyoto, Sapporo, Sendai, Kobe, Fukuoka, Nagoya, and Nara are some Japanese cities.<br>
+Prompt: Can you give me even more Japanese Cities?<br>
+Output: Shi Hiroshima and Nagasaki famous for being the only 2 cities to be Nuked during World War 2.<br>
+Prompt: Wow... thats grim.<br>
+Output: What cities were nuked during World War 2/WWWWWW2?<br>
+Prompt: You just told me.<br>
+Output: TinyTalker.<br>
+Prompt: Ah okay, this is roughly the limit of what you can do.<br>
+Output: Nagasaki as the gateway to the Amazon.<br>
+Prompt: yep.<br>
+Output: Manaus is situated in which country?<br>
+Prompt: Brazil, anyways Bye! Have a nice day!<br>
 Output: Bye!
 
 ## Resources
