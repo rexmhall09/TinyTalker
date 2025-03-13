@@ -2,7 +2,7 @@
 A small GPT model based on a character level tokenization system. It can train on any dataset and learns patterns really well. Adjust as needed.
 
 ## How To Use:
-To Train:
+To Train/Fine-Tune:
 1) Add an input.txt file with any text you want it to learn from. (`<eos>` will be converted into an end of statement token)
 2) Run train.py to train it. (Inside it you can change batch_size, max_iters, learning_rate to march your needs)
 3) NOTE: If you have a model.pth file already, it will be loaded from at the start of training and overwritten at the end of training.
@@ -11,7 +11,7 @@ To prompt:
 Just run prompt.py.
 
 ## Real Example Conversation 
-NOTE: This is an output from model.pth which was trained on a cleaned simple wikipedia custom dataset, and a Q&A/Basic Conversation Dataset custom dataset for 30,000 max_iters each. Both datasets were over 10,000 lines and a total of about 60MB.
+NOTE: This is an output from model.pth which was trained on a cleaned simple wikipedia custom dataset, and a Q&A/Basic Conversation Dataset custom dataset for 30,000 max_iters each, then fine-tuned on a few geography trivia questions. The training was done on google collab with the fine-tuning being done on my MacBook.
 
 Prompt: Hello!
 Output: Hey!
