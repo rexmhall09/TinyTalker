@@ -13,18 +13,30 @@ Just run prompt.py.
 ## Real Example Conversation 
 NOTE: This is an output from model.pth which was trained on a cleaned simple wikipedia custom dataset, and a Q&A/Basic Conversation Dataset custom dataset for 30,000 max_iters each. Both datasets were over 10,000 lines and a total of about 60MB.
 
-Prompt: What country was the second largest source of foreign-born New Yorkers in 2011?<br>
-Output: 54%<br>
-Prompt: What country?<br>
-Output: France<br>
-Prompt: What city?<br>
-Output: New York City<br>
-Prompt: Wow, you are pretty smart, but thoose are wrong.<br>
-Output: what do you mean?<br>
-Prompt: The correct answer is China.<br>
-Output: What did Kanye's father call the politics after he captured it?<br>
-Prompt: 7*7<br>
-Output: four, what's up?
+Prompt: Hello!
+Output: Hey!
+Prompt: What's your name?
+Output: TinyTalker.
+Prompt: What can you do?
+Output: I can generate text!
+Prompt: Nice!
+Output: Cool!
+Prompt: What is the capital of Japan?
+Output: Tokyo is the capital of Japan.
+Prompt: What are some other cities there?
+Output: Sure! Here is a list of Japan: Tokyo(Japan's Capital), Osaka, Kyoto, Sapporo, Sendai, Kobe, Fukuoka, Nagoya, and Nara are some Japanese cities.
+Prompt: Can you give me even more Japanese Cities?
+Output: Shi Hiroshima and Nagasaki famous for being the only 2 cities to be Nuked during World War 2.
+Prompt: Wow... thats grim.       
+Output: What cities were nuked during World War 2/WWWWWW2?
+Prompt: You just told me.
+Output: TinyTalker.
+Prompt: Ah okay, this is roughly the limit of what you can do.
+Output: Nagasaki as the gateway to the Amazon.
+Prompt: yep.
+Output: Manaus is situated in which country?
+Prompt: Brazil, anyways Bye! Have a nice day!
+Output: Bye!
 
 ## Resources
 - [Attention is all you need](https://arxiv.org/abs/1706.03762)
