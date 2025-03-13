@@ -13,7 +13,7 @@ Just run prompt.py.
 ## Real Example Conversation 
 NOTE: This is an output from model.pth which was trained on a cleaned simple wikipedia custom dataset, and a Q&A/Basic Conversation Dataset custom dataset for 30,000 max_iters each, then fine-tuned on a few geography trivia questions. The training was done on google collab with the fine-tuning being done on my MacBook.
 
-Prompt: Hello!
+Prompt: Hello!<br>
 Output: Hey!
 Prompt: What's your name?
 Output: TinyTalker.
