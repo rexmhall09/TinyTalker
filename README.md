@@ -4,7 +4,7 @@ A small GPT model based on a character level tokenization system. It can train o
 ## How To Use:
 To Train/Fine-Tune:
 1) Add an input.txt file with any text you want it to learn from. (`<eos>` will be converted into an end of statement token)
-2) Run train.py to train it. (Inside it you can change batch_size, max_iters, learning_rate to march your needs)
+2) Run train.py to train it. (Inside it you can change batch_size, max_iters, learning_rate to match your needs)
 3) NOTE: If you have a model.pth file already, it will be loaded from at the start of training and overwritten at the end of training.
 
 To prompt:
