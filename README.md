@@ -1,6 +1,18 @@
 # TinyTalker
 A small GPT model based on a character level tokenization system. It can train on any dataset and learns patterns really well. Adjust as needed.
 
+## Model weights
+The pretrained weights are hosted on [Hugging Face](https://huggingface.co/rexmhall09/TinyTalker), under the same MIT license as this repository.
+Install the inference dependencies:
+
+```sh
+pip install torch huggingface_hub flask
+```
+
+`prompt.py` and `server.py` use a local `model.pth` when present. Otherwise, they download the pretrained checkpoint from Hugging Face and reuse its local cache on later runs. The first run requires internet access. Weights are no longer distributed through Git LFS.
+
+`train.py` continues to load and save `model.pth` locally; it does not download weights automatically. To fine-tune the published checkpoint, download `model.pth` from Hugging Face into the working directory first.
+
 ## How To Use:
 To Train/Fine-Tune:
 1) Add an input.txt file with any text you want it to learn from. (`<eos>` will be converted into an end of statement token)
