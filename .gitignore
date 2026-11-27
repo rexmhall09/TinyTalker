@@ -1,0 +1,10 @@
+model.pth
+__pycache__/
+.claude/settings.local.json
+*.jsonl
+.env
+.env.*
+!.env.example
+*credentials*
+*.pem
+*.key

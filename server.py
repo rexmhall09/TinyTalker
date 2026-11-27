@@ -1,3 +1,5 @@
+from pathlib import Path
+
 import time
 import uuid
 from flask import Flask, request, jsonify
@@ -15,7 +17,12 @@ model = GPTLanguageModel(vocab_size=tokenizer.vocab_size,
                          n_embd=n_embd, n_head=n_head, 
                          n_layer=n_layer, block_size=block_size, 
                          dropout=dropout).to(device)
-model.load_state_dict(torch.load("model.pth", map_location=device))
+weights_path = Path("model.pth")
+if not weights_path.is_file():
+    from huggingface_hub import hf_hub_download
+
+    weights_path = hf_hub_download(repo_id="rexmhall09/TinyTalker", filename="model.pth")
+model.load_state_dict(torch.load(weights_path, map_location=device))
 model.eval()  # set model to evaluation mode (no gradient)
 
 # Define the /chat/completions route
